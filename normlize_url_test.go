@@ -46,9 +46,11 @@ func TestNormalizeURL(t *testing.T) {
 				return
 			} else if err == nil && tc.errorMsg != "" {
 				t.Errorf("Test %v - '%s' FAIL: expected error conaining '%v', got none\n", i, tc.name, tc.errorMsg)
+				return
 			}
 			if actual != tc.expected {
 				t.Errorf("Test %v - '%s' FAIL: expected URL: %v, actual %v", i, tc.name, tc.expected, actual)
+				return
 			}
 		})
 	}
